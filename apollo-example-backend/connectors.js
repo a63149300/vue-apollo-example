@@ -1,30 +1,30 @@
-import _ from 'lodash';
+import _ from 'lodash'
 // Fake word generator
-import faker from 'faker';
+import faker from 'faker'
 
 // Let's generate some tags
-var id = 0;
-var tags = [];
+var id = 0
+var tags = []
 for (let i = 0; i < 42; i++) {
-  if(Math.random() < .5) {
-    addTag('City', faker.address.city());
+  if (Math.random() < .5) {
+    addTag('City', faker.address.city())
   } else {
-    addTag('Company', faker.company.companyName());
+    addTag('Company', faker.company.companyName())
   }
 }
 
-function addTag(type, label) {
+function addTag (type, label) {
   return new Promise(resolve => {
     setTimeout(() => {
       let t = {
         id: id++,
         label,
-        type,
-      };
-      tags.push(t);
-      resolve(t);
-    }, 2000);
-  });
+        type
+      }
+      tags.push(t)
+      resolve(t)
+    }, 2000)
+  })
 }
 
 function fakeDelay (cb) {
@@ -36,24 +36,24 @@ function fakeDelay (cb) {
 }
 
 export default {
-  getTags(type) {
+  getTags (type) {
     return fakeDelay(() => _.filter(tags, tag => tag.type === type))
   },
-  getTagsPage(page, pageSize) {
+  getTagsPage (page, pageSize) {
     return fakeDelay(() => {
-      const start = page * pageSize;
-      const end = start + pageSize;
+      const start = page * pageSize
+      const end = start + pageSize
       return {
         tags: tags.slice(start, end),
-        hasMore: end < tags.length,
-      };
+        hasMore: end < tags.length
+      }
     })
   },
-  getRandomTag() {
-    return fakeDelay(() => tags[Math.round(Math.random()*(tags.length - 1))])
+  getRandomTag () {
+    return fakeDelay(() => tags[Math.round(Math.random() * (tags.length - 1))])
   },
-  getLastTag() {
-    return tags[tags.length - 1];
+  getLastTag () {
+    return tags[tags.length - 1]
   },
-  addTag,
-};
+  addTag
+}
