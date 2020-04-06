@@ -1,7 +1,6 @@
-# apollo-server-example
-A very simple Apollo GraphQL server
+# apollo-example-backend
 
 ```
-npm install
+npm install or cnpm install or yarn
 npm run dev
 ```

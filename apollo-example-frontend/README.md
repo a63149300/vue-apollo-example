@@ -1,24 +1,6 @@
-# apollo-example
+# apollo-example-frontend
 
-## Project setup
 ```
-yarn install
+npm install or cnpm install or yarn
+npm run serve
 ```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
