@@ -44,7 +44,7 @@ const apolloProvider = new VueApollo({
   errorHandler (error) {
     console.log('Global error handler')
     console.error(error)
-  },
+  }
 })
 
 Vue.config.productionTip = false
