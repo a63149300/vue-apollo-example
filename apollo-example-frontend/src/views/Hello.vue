@@ -27,7 +27,7 @@
         query: gql`query {
           hello
         }`
-      },
+      }
     }
   }
 </script>
