@@ -55,7 +55,7 @@
         updateCount: 0,
         type: 'City',
         skipQuery: false,
-        tagsLoading: 0,
+        tagsLoading: 0
       }
     },
     apollo: {
@@ -101,7 +101,7 @@
           // Loading key
           loadingKey: 'tagsLoading'
         }
-      },
+      }
     },
     methods: {
       addTag () {
